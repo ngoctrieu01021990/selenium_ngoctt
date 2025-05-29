@@ -1,10 +1,8 @@
 package Java_basic;
-
 import org.testng.annotations.Test;
-
 import java.util.Scanner;
 
-public class Topic_06_excecies {
+public class Topic_06_BaiTap {
     Scanner scanner = new Scanner(System.in);
 
     //Bài 1
