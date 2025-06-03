@@ -1,5 +1,7 @@
 package Java_basic;
+
 import org.testng.annotations.Test;
+
 import java.util.Scanner;
 
 public class Topic_06_BaiTap {
@@ -115,7 +117,9 @@ public class Topic_06_BaiTap {
         } else if (month == 4 || month == 6 || month == 9 || month == 11) {
             System.out.print("Tháng có 30 ngày");
         } else {
-            System.out.print("Không tính được số ngày. Nhập lại tháng");
+            System.out.print("Tháng nhập vào không đúng");
         }
     }
+
+
 }
