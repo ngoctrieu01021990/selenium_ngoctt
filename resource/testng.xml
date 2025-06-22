@@ -5,5 +5,16 @@
         <classes>
             <class name="webdriver.Topic_01_evironment"/>
         </classes>
+
+    </test>
+    <test name="Run on FIREFOX browser">
+        <classes>
+            <class name="Java_basic.Topic_06_BaiTap"/>
+            <methods>
+                <include name="">
+                <include>
+            </methods>
+        </classes>
+
     </test>
 </suite>

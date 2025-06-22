@@ -18,7 +18,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="testng-7.11.0" level="project" />
+    <orderEntry type="library" exported="" name="testng-7.11.0" level="project" />
     <orderEntry type="library" name="selenium-api-4.32.0" level="project" />
     <orderEntry type="library" name="owner-1.0.12" level="project" />
   </component>
