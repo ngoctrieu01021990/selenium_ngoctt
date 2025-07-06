@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_04_Relative_Locator {
+public class Topic_16_Relative_Locator {
     WebDriver driver;
     @BeforeClass
     public void beforeClass(){
@@ -20,10 +20,11 @@ public class Topic_04_Relative_Locator {
     }
 
     @Test
-    public void TC_01(){
-        driver.get("https://demo.nopcommerce.com/login");
+    public void TC_01() throws InterruptedException {
+        driver.get("https://demo.nopcommerce.com/login?returnUrl=%2F");
+
         //Remember me?
-        WebElement rememberMeText =  driver.findElement(RelativeLocator.with(By.tagName("label"))
+        WebElement rememberMeElement =  driver.findElement(RelativeLocator.with(By.tagName("label"))
                 // ben tren button Login
                 .above(By.cssSelector("button.login-button"))
                 //.above(driver.findElement(By.cssSelector("button.login-button")))
@@ -37,7 +38,6 @@ public class Topic_04_Relative_Locator {
                 // dung ben trai Forgot password?
                 .toLeftOf(By.xpath("//a[text()='Forgot password?']"))
         );
-        System.out.println(rememberMeText.getText());
-
+        System.out.println(rememberMeElement.getText());
     }
 }

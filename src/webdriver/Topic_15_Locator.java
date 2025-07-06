@@ -7,7 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_03_Locator {
+public class Topic_15_Locator {
     // Khai bao bien dai dien cho selenium webdriver
     WebDriver driver;
 
@@ -21,7 +21,7 @@ public class Topic_03_Locator {
     }
 
     @Test
-    public void TC_01_id(){
+    public void TC_01_Id(){
         // Tim element: neu can tim 1 element --> dung Element, neu can tim nhieu element --> dung Elements
         driver.findElement(By.id("email"));
     }
@@ -33,16 +33,16 @@ public class Topic_03_Locator {
     }
 
     @Test
-    public void TC_03_tagName(){
+    public void TC_03_Name(){
+        driver.findElements(By.name("login[username]"));
+        driver.findElements(By.name("login[password]"));
+        driver.findElements(By.name("login[email]"));
+    }
+
+    @Test
+    public void TC_04_tagName(){
         // class chi truyen vao 1 phan neu co khoang trang
         // Lay het khi k co khoang trang
-        int inPut = driver.findElements(By.tagName("input")).size();
-        System.out.println(inPut);
-    }
-    @Test
-    public void TC_04_linkText(){
-        // Dung voi duong link
-        //Tuyet doi: truyen ca duong link
         int inPut = driver.findElements(By.tagName("input")).size();
         System.out.println(inPut);
     }
@@ -67,26 +67,31 @@ public class Topic_03_Locator {
     @Test
     public void TC_07_CSS(){
         // Css-ID
-        driver.findElements(By.cssSelector("input[id='email']"));
-        driver.findElements(By.cssSelector("#email"));
-        driver.findElements(By.cssSelector("input#email"));
+        driver.findElement(By.cssSelector("input[id='email']"));
+        driver.findElement(By.cssSelector("#email"));
+        driver.findElement(By.cssSelector("input#email"));
 
         // Css-class
-        driver.findElements(By.cssSelector("div[class='account-login']"));
-        driver.findElements(By.cssSelector(".account-login"));
-        driver.findElements(By.cssSelector("div.account-login"));
+        driver.findElement(By.cssSelector("div[class='account-login']"));
+        driver.findElement(By.cssSelector(".account-login"));
+        driver.findElement(By.cssSelector("div.account-login"));
 
-        driver.findElements(By.cssSelector("div[class='col-2 registered-users']"));
-        driver.findElements(By.cssSelector(".registered-users"));
-        driver.findElements(By.cssSelector("div.registered-users"));
-        driver.findElements(By.cssSelector("div.registered-users.col-2"));
-
-
+        driver.findElement(By.cssSelector("div[class='col-2 registered-users']"));
+        driver.findElement(By.cssSelector(".registered-users"));
+        driver.findElement(By.cssSelector("div.registered-users"));
+        driver.findElement(By.cssSelector("div.registered-users.col-2"));
 
         // Css-name
+        driver.findElement(By.cssSelector("input[name='login[username]']"));
+
         // Css-tagName
+        driver.findElements(By.cssSelector("input"));
+
         // Css-Link
+        driver.findElements(By.cssSelector("a[href='http://live.techpanda.org/index.php/customer/account/']"));
+
         // Css-Partial Link
+        driver.findElements(By.cssSelector("a[href*='customer/account/']"));
     }
 
     @Test
@@ -97,10 +102,20 @@ public class Topic_03_Locator {
         // xpath-class
         driver.findElements(By.xpath("//div[@class='account-login']"));
         driver.findElements(By.xpath("//div[@class='col-2 registered-users']"));
+
         // xpath-name
+        driver.findElements(By.xpath("//input[@name='login[username]']"));
+
         // xpath-tagName
+        driver.findElements(By.xpath("//input"));
+
         // xpath-Link
+        driver.findElements(By.xpath("//a[@href='http://live.techpanda.org/index.php/customer/account/']"));
+        driver.findElements(By.xpath("//a[text()='My Account']"));
+
         // xpath-Partial Link
+        driver.findElements(By.xpath("//a[contains(@href,'customer/account/')]"));
+        driver.findElements(By.xpath("//a[contains(text(),'My Account')]"));
     }
 
     @AfterClass
