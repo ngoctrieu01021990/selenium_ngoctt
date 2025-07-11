@@ -12,7 +12,6 @@ public class Topic_17_Xpath_CSS {
 
     @BeforeClass
     public void beforeClass() {
-        // Khoi tao trinh duyet firefox len
         driver = new FirefoxDriver();
     }
 
@@ -260,7 +259,6 @@ public class Topic_17_Xpath_CSS {
        // searchtext.value
 
         //2. KT xem có bao nhiêu element
-
     }
 
     @AfterClass
