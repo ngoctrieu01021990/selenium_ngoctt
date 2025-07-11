@@ -29,14 +29,14 @@ public class Topic_15_Locator {
     public void TC_02_className(){
         // class chi truyen vao 1 phan neu co khoang trang
         // Lay het khi k co khoang trang
-        driver.findElements(By.className("input-text required-entry"));
+        driver.findElement(By.className("input-text required-entry"));
     }
 
     @Test
     public void TC_03_Name(){
-        driver.findElements(By.name("login[username]"));
-        driver.findElements(By.name("login[password]"));
-        driver.findElements(By.name("login[email]"));
+        driver.findElement(By.name("login[username]"));
+        driver.findElement(By.name("login[password]"));
+        driver.findElement(By.name("login[email]"));
     }
 
     @Test
@@ -51,8 +51,8 @@ public class Topic_15_Locator {
     public void TC_05_linkText(){
         // Dung voi duong link
         //Tuong doi: truyen 1 phan duong link
-        driver.findElements(By.linkText("MY ACCOUNT"));
-        driver.findElements(By.linkText("ORDERS AND RETURNS"));
+        driver.findElement(By.linkText("MY ACCOUNT"));
+        driver.findElement(By.linkText("ORDERS AND RETURNS"));
 
     }
 
@@ -60,8 +60,8 @@ public class Topic_15_Locator {
     public void TC_06_Partial_linkText(){
         // Dung voi duong link
         //Tuong doi: truyen 1 phan hoac tat ca duong link
-        driver.findElements(By.partialLinkText("ACCOUNT"));
-        driver.findElements(By.partialLinkText("ORDERS"));
+        driver.findElement(By.partialLinkText("ACCOUNT"));
+        driver.findElement(By.partialLinkText("ORDERS"));
     }
 
     @Test
@@ -85,37 +85,78 @@ public class Topic_15_Locator {
         driver.findElement(By.cssSelector("input[name='login[username]']"));
 
         // Css-tagName
-        driver.findElements(By.cssSelector("input"));
+        driver.findElement(By.cssSelector("input"));
 
         // Css-Link
-        driver.findElements(By.cssSelector("a[href='http://live.techpanda.org/index.php/customer/account/']"));
+        driver.findElement(By.cssSelector("a[href='http://live.techpanda.org/index.php/customer/account/']"));
 
         // Css-Partial Link
-        driver.findElements(By.cssSelector("a[href*='customer/account/']"));
+        driver.findElement(By.cssSelector("a[href*='customer/account/']"));
     }
 
     @Test
     public void TC_08_xPath(){
         // xpath -ID
-        driver.findElements(By.xpath("//input[@id='email']"));
+        driver.findElement(By.xpath("//input[@id='email']"));
 
         // xpath-class
-        driver.findElements(By.xpath("//div[@class='account-login']"));
-        driver.findElements(By.xpath("//div[@class='col-2 registered-users']"));
+        driver.findElement(By.xpath("//div[@class='account-login']"));
+        driver.findElement(By.xpath("//div[@class='col-2 registered-users']"));
 
         // xpath-name
-        driver.findElements(By.xpath("//input[@name='login[username]']"));
+        driver.findElement(By.xpath("//input[@name='login[username]']"));
 
         // xpath-tagName
-        driver.findElements(By.xpath("//input"));
+        driver.findElement(By.xpath("//input"));
 
         // xpath-Link
-        driver.findElements(By.xpath("//a[@href='http://live.techpanda.org/index.php/customer/account/']"));
-        driver.findElements(By.xpath("//a[text()='My Account']"));
+        driver.findElement(By.xpath("//a[@href='http://live.techpanda.org/index.php/customer/account/']"));
+        driver.findElement(By.xpath("//a[text()='My Account']"));
 
         // xpath-Partial Link
-        driver.findElements(By.xpath("//a[contains(@href,'customer/account/')]"));
-        driver.findElements(By.xpath("//a[contains(text(),'My Account')]"));
+        driver.findElement(By.xpath("//a[contains(@href,'customer/account/')]"));
+        driver.findElement(By.xpath("//a[contains(text(),'My Account')]"));
+    }
+
+    @Test
+    public void Excercise(){
+        driver.get("https://alada.vn/tai-khoan/dang-ky.html");
+
+        driver.findElement(By.cssSelector("input#txtSearch"));
+        driver.findElement(By.xpath("//input[@id='txtSearch']"));
+
+        driver.findElement(By.xpath("//span[@class='box-item-login']/a"));
+        driver.findElement(By.cssSelector("span[class='box-item-login']>a"));
+
+        driver.findElement(By.cssSelector("span[class='box-item-login bor']>a"));
+        driver.findElement(By.xpath("//span[@class='box-item-login bor']/a"));
+
+        driver.findElement(By.xpath("//input[@id='txtFirstname']"));
+        driver.findElement(By.cssSelector("input#txtFirstname"));
+
+        driver.findElement(By.xpath("//input[@id='txtEmail']"));
+        driver.findElement(By.cssSelector("input#txtEmail"));
+
+        driver.findElement(By.xpath("//input[@id='txtCEmail']"));
+        driver.findElement(By.cssSelector("input#txtCEmail"));
+
+        driver.findElement(By.xpath("//input[@id='txtPassword']"));
+        driver.findElement(By.cssSelector("input#txtPassword"));
+
+        driver.findElement(By.xpath("//input[@id='txtCPassword']"));
+        driver.findElement(By.cssSelector("input#txtCPassword"));
+
+        driver.findElement(By.xpath("//input[@id='txtPhone']"));
+        driver.findElement(By.cssSelector("input#txtPhone"));
+
+        driver.findElement(By.xpath("//input[@id='chkRight']"));
+        driver.findElement(By.cssSelector("input#chkRight"));
+
+        driver.findElement(By.xpath("//div[@class='field_btn']/button[text()='ĐĂNG KÝ']"));
+        driver.findElement(By.cssSelector("div[class='field_btn']>button"));
+
+        driver.findElement(By.xpath("//button[@id='btndknfooter']"));
+        driver.findElement(By.cssSelector("button[id='btndknfooter']"));
     }
 
     @AfterClass
