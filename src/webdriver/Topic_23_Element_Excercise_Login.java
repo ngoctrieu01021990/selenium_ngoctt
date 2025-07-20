@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_17_20_Element_Excercise_Login {
+public class Topic_23_Element_Excercise_Login {
     WebDriver driver;
 
     @BeforeClass
@@ -43,13 +43,11 @@ public class Topic_17_20_Element_Excercise_Login {
         Assert.assertFalse(driver.findElement(By.cssSelector("input#register_password")).isEnabled());
         Assert.assertFalse(driver.findElement(By.cssSelector("button.fhs-btn-register")).isEnabled());
 
-
         // element selected: đã được chọn
         driver.get("http://live.techpanda.org/index.php/customer/account/create/");
         Assert.assertTrue(driver.findElement(By.cssSelector("input#is_subscribed")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.cssSelector("input#is_subscribed")).isEnabled());
         Assert.assertFalse(driver.findElement(By.cssSelector("input#is_subscribed")).isSelected());
-
     }
 
     @Test

@@ -5,7 +5,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Topic_07_Element_command {
+public class Topic_23_Element_command {
 
     @Test
     public void TC_01() {
@@ -18,7 +18,8 @@ public class Topic_07_Element_command {
         driver.findElement(By.cssSelector("")).clear();//xóa dl trước khi nhập
         driver.findElement(By.cssSelector("")).sendKeys("");// nhập và gửi data đi
 
-        driver.findElement(By.cssSelector("a")).findElement(By.cssSelector("b"));// cho phép find element nhiều lần
+        // Cho phép find element nhiều lần
+        driver.findElement(By.cssSelector("a")).findElement(By.cssSelector("b"));
         //--> có thể gộp cho gọn như sau:
         driver.findElement(By.cssSelector("a>b"));
 
@@ -29,7 +30,7 @@ public class Topic_07_Element_command {
 
         // KT 1 element là hiển thị hay k hiển thị
         // thấy trên UI + kích thước >0
-        // ** áp dụng cho tất cả caác loại element
+        // ** áp dụng cho tất cả các loại element
         Assert.assertTrue(driver.findElement(By.cssSelector("")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.cssSelector("")).isDisplayed());
 
@@ -87,7 +88,7 @@ public class Topic_07_Element_command {
         driver.findElement(By.cssSelector("")).getShadowRoot();
 
         // chỉ áp dụng cho element nằm trong form
-        //tương tự hành vi hửi request lên server
+        //tương tự hành vi gửi request lên server
         driver.findElement(By.cssSelector("input#newsletter")).submit();
     }
 }

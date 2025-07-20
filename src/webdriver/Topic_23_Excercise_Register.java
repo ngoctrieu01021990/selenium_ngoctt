@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_17_20_Excercise_Register {
+public class Topic_23_Excercise_Register {
     WebDriver driver;
 
     @BeforeClass
@@ -62,7 +62,6 @@ public class Topic_17_20_Excercise_Register {
         driver.findElement(By.cssSelector("input#txtCPassword")).sendKeys("123456");
         driver.findElement(By.cssSelector("input#txtPhone")).sendKeys("0987654321");
         driver.findElement(By.cssSelector("div.frmRegister button.btn_pink_sm")).click();
-
         Assert.assertEquals(driver.findElement(By.cssSelector("label#txtCEmail-error")).getText(), "Email nhập lại không đúng");
     }
 
@@ -78,7 +77,6 @@ public class Topic_17_20_Excercise_Register {
         driver.findElement(By.cssSelector("div.frmRegister button.btn_pink_sm")).click();
         Assert.assertEquals(driver.findElement(By.cssSelector("label#txtPassword-error")).getText(), "Mật khẩu phải có ít nhất 6 ký tự");
         Assert.assertEquals(driver.findElement(By.cssSelector("label#txtCPassword-error")).getText(), "Mật khẩu phải có ít nhất 6 ký tự");
-
     }
 
     @Test
@@ -91,7 +89,6 @@ public class Topic_17_20_Excercise_Register {
         driver.findElement(By.cssSelector("input#txtCPassword")).sendKeys("123456");
         driver.findElement(By.cssSelector("input#txtPhone")).sendKeys("0987654321");
         driver.findElement(By.cssSelector("div.frmRegister button.btn_pink_sm")).click();
-
         Assert.assertEquals(driver.findElement(By.cssSelector("label#txtCPassword-error")).getText(), "Mật khẩu bạn nhập không khớp");
 
     }
@@ -120,13 +117,10 @@ public class Topic_17_20_Excercise_Register {
         driver.findElement(By.cssSelector("input#txtPhone")).sendKeys("sfdf");
         driver.findElement(By.cssSelector("div.frmRegister button.btn_pink_sm")).click();
         Assert.assertEquals(driver.findElement(By.cssSelector("label#txtPhone-error")).getText(), "Vui lòng nhập con số");
-
-
     }
 
     @AfterClass
     public void afterClass() {
         driver.quit();
     }
-
 }

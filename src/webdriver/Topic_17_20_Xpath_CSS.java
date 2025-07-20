@@ -45,12 +45,10 @@ public class Topic_17_20_Xpath_CSS {
         driver.get("https://live.techpanda.org/index.php/mobile.html");
         // lấy theo index
         driver.findElement(By.xpath("(//span[text()='Add to Cart'])[2]"));
-
         driver.get("https://automationfc.github.io/jquery-selectable/");
         driver.findElement(By.xpath("(//ol[@id='selectable']//li)[3]"));
         driver.findElement(By.xpath("(//ol[@id='selectable']//li)[last()]"));
         driver.findElement(By.xpath("(//ol[@id='selectable']//li)[last()-1]"));
-
     }
 
     @Test
