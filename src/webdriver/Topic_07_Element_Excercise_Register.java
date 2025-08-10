@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_23_Excercise_Register {
+public class Topic_07_Element_Excercise_Register {
     WebDriver driver;
 
     @BeforeClass
@@ -90,7 +90,6 @@ public class Topic_23_Excercise_Register {
         driver.findElement(By.cssSelector("input#txtPhone")).sendKeys("0987654321");
         driver.findElement(By.cssSelector("div.frmRegister button.btn_pink_sm")).click();
         Assert.assertEquals(driver.findElement(By.cssSelector("label#txtCPassword-error")).getText(), "Mật khẩu bạn nhập không khớp");
-
     }
 
     @Test

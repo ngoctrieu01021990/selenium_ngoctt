@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_22_Browser_Excercise {
+public class Topic_06_Browser_Excercise {
     WebDriver driver;
 
     @BeforeClass
@@ -26,7 +26,6 @@ public class Topic_22_Browser_Excercise {
         Assert.assertEquals(driver.getCurrentUrl(), "https://live.techpanda.org/index.php/customer/account/login/");
         driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
         Assert.assertEquals(driver.getCurrentUrl(), "https://live.techpanda.org/index.php/customer/account/create/");
-
     }
 
     @Test

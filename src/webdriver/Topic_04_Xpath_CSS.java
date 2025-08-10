@@ -7,7 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_17_20_Xpath_CSS {
+public class Topic_04_Xpath_CSS {
     WebDriver driver;
 
     @BeforeClass

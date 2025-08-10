@@ -5,7 +5,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Topic_23_Element_command {
+public class Topic_07_Element_command {
 
     @Test
     public void TC_01() {

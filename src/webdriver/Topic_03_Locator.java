@@ -7,7 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_15_Locator {
+public class Topic_03_Locator {
     // Khai bao bien dai dien cho selenium webdriver
     WebDriver driver;
 

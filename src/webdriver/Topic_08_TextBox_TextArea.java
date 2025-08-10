@@ -123,9 +123,6 @@ public class Topic_08_TextBox_TextArea {
         // loading icon at personal detail page
         Assert.assertTrue(isLoadingIconDisappear());
 
-//        Assert.assertTrue(driver.findElement(By.xpath("//button[contains(string(),'Save')]")).isDisplayed());
-//        Assert.assertTrue(isLoadingIconDisappear());
-
         // personal detail page
         Assert.assertEquals(driver.findElement(By.cssSelector("input[name='firstName']")).getDomProperty("value"),firstName);
         Assert.assertEquals(driver.findElement(By.cssSelector("input[name='lastName']")).getDomProperty("value"),lastName);
@@ -146,9 +143,6 @@ public class Topic_08_TextBox_TextArea {
         // verify success message display
         Assert.assertTrue(driver.findElement(By.xpath("//p[text()='Successfully Saved']")).isDisplayed());
         Assert.assertTrue(isLoadingIconDisappear());
-
-//        Assert.assertTrue(driver.findElement(By.xpath("//button[contains(string(),'Save')]")).isDisplayed());
-//        Assert.assertTrue(isLoadingIconDisappear());
 
         Assert.assertTrue(driver.findElement(By.xpath("//div[text()='Passport']/parent::div/following-sibling::div/div[text()='"+
                 passportNumber+"']")).isDisplayed());
@@ -181,10 +175,8 @@ public class Topic_08_TextBox_TextArea {
         //Immigration page
         driver.findElement(By.xpath("//a[text()='Immigration']")).click();
         Assert.assertTrue(isLoadingIconDisappear());
-
         Assert.assertTrue(driver.findElement(By.xpath("//div[text()='Passport']/parent::div/following-sibling::div/div[text()='"+
                 passportNumber+"']")).isDisplayed());
-
     }
 
     private Boolean isLoadingIconDisappear() {

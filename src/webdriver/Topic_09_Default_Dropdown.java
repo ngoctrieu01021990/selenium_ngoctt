@@ -17,6 +17,7 @@ public class Topic_09_Default_Dropdown {
     WebDriver driver;
     Select select;
 
+
     @BeforeClass
     public void beforClass() {
         driver = new FirefoxDriver();
@@ -28,20 +29,22 @@ public class Topic_09_Default_Dropdown {
     @Test
     public void TC_01() throws InterruptedException {
         driver.get("https://www.facebook.com/r.php?entry_point=login");
+        String day="30";
+        String month="Dec";
+        String year="1996";
 
         // Khởi tạo thư viện select khi dropdown xuất hiện
-
         select = new Select(driver.findElement(By.cssSelector("select#day")));
-        select.selectByVisibleText("30");
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"30");
+        select.selectByVisibleText(day);
+        Assert.assertEquals(select.getFirstSelectedOption().getText(),day);
 
         select = new Select(driver.findElement(By.cssSelector("select#month")));
-        select.selectByVisibleText("Dec");
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"Dec");
+        select.selectByVisibleText(month);
+        Assert.assertEquals(select.getFirstSelectedOption().getText(),month);
 
         select = new Select(driver.findElement(By.cssSelector("select#year")));
-        select.selectByVisibleText("1990");
-        Assert.assertEquals(select.getFirstSelectedOption().getText(),"1990");
+        select.selectByVisibleText(year);
+        Assert.assertEquals(select.getFirstSelectedOption().getText(),year);
 
         // chọn 1 tháng bất kỳ trong dropdown
         select.selectByIndex(3);// k phù hợp cho sự cập nhật item (VD: sát nhập tỉnh)
@@ -85,7 +88,6 @@ public class Topic_09_Default_Dropdown {
             System.out.println(temp.getText());
         }
     }
-
 
     @AfterClass
     public void afterClass() {

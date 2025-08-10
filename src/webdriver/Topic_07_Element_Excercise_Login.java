@@ -11,10 +11,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 
-public class Topic_23_Element_Excercise_Login {
+public class Topic_07_Element_Excercise_Login {
     WebDriver driver;
 
     @BeforeClass
@@ -64,7 +63,7 @@ public class Topic_23_Element_Excercise_Login {
             // Accept button might not be there or already clicked — safe to ignore
         }
 
-// Wait for the cookie policy banner to disappear
+        // Wait for the cookie policy banner to disappear
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("onetrust-policy-text")));
 
         // test case nhập vào pass toàn bộ là lower case
@@ -144,7 +143,6 @@ public class Topic_23_Element_Excercise_Login {
         Assert.assertFalse(driver.findElement(By.cssSelector("li.special-char.completed")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.cssSelector("li[class='8-char completed']")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.cssSelector("li.username-check.completed")).isDisplayed());
-
     }
 
     @Test
