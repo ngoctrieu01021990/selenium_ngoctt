@@ -101,7 +101,7 @@ public class Topic_15_Popup {
             // close đi
             driver.findElement(By.cssSelector("picture.webpimg-container>img[alt='close-icon']")).click();
             Thread.sleep(1500);
-
+        }
             //click vào Đăng nhập/Đăng ký
             driver.findElement(By.xpath("//span[text()='Tài khoản']")).click();
             Thread.sleep(1000);
@@ -129,9 +129,6 @@ public class Topic_15_Popup {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(shortTimeout));
             Assert.assertEquals(driver.findElements(loginPopup).size(), 0);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
-        }
-
-
     }
 
     @AfterClass

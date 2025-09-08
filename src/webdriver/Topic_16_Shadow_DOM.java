@@ -85,13 +85,13 @@ public class Topic_16_Shadow_DOM {
 
         WebElement bookExplorerShadowHost = bookAppShadowRoot.findElement(By.cssSelector("book-explore"));
         SearchContext bookExplorerShadowRoot = bookExplorerShadowHost.getShadowRoot();
+        Thread.sleep(3000);
 
         List<WebElement> listBookItems = bookExplorerShadowRoot.findElements(By.cssSelector("section>ul.books>li>book-item"));
 
         for (WebElement bookItem : listBookItems) {
             SearchContext bookItemShadowRoot = bookItem.getShadowRoot();
             System.out.println(bookItemShadowRoot.findElement(By.cssSelector("div.title-container>h2.title")).getText());
-            //KQ: sao k in được?
         }
 
     }
