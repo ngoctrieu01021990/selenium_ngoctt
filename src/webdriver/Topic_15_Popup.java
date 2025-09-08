@@ -129,6 +129,7 @@ public class Topic_15_Popup {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(shortTimeout));
             Assert.assertEquals(driver.findElements(loginPopup).size(), 0);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
+
     }
 
     @AfterClass

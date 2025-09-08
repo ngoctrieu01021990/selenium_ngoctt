@@ -93,7 +93,6 @@ public class Topic_16_Shadow_DOM {
             SearchContext bookItemShadowRoot = bookItem.getShadowRoot();
             System.out.println(bookItemShadowRoot.findElement(By.cssSelector("div.title-container>h2.title")).getText());
         }
-
     }
 
     @AfterClass
