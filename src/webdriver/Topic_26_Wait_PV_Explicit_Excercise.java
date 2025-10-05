@@ -1,9 +1,13 @@
 package webdriver;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -69,9 +73,42 @@ public class Topic_26_Wait_PV_Explicit_Excercise {
                 (By.cssSelector("div:not([style='display:none;'])>div.raDiv"))));
 
         //wait cho text được cập nhật lên trang
-        Assert.assertTrue(explicitWait.until(ExpectedConditions.textToBe
-                (By.cssSelector("span#ctl00_ContentPlaceholder1_Label1"), "Thursday, September 18, 2025")));
+        Assert.assertTrue(explicitWait.until(ExpectedConditions.textToBe(By.cssSelector("span#ctl00_ContentPlaceholder1_Label1"), "Thursday, September 18, 2025"))); // dùng explicit wait
+        Assert.assertTrue(waitTextChange("span#ctl00_ContentPlaceholder1_Label1", "Thursday, September 18, 2025"));// dùng fluent wait
     }
+
+    private boolean waitLoadingIconInvisible(String cssLocator) {
+        FluentWait<WebDriver> fluentWait = new FluentWait<>(driver);
+
+        fluentWait.withTimeout(Duration.ofSeconds(15))
+                .pollingEvery(Duration.ofMillis(100))
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
+
+        return fluentWait.until(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return driver.findElements(By.cssSelector(cssLocator)).isEmpty();
+            }
+        });
+    }
+
+    private boolean waitTextChange(String cssLocator, String textExxpected) {
+        FluentWait<WebDriver> fluentWait = new FluentWait<>(driver);
+
+        fluentWait.withTimeout(Duration.ofSeconds(15))
+                .pollingEvery(Duration.ofMillis(100))
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
+
+        return fluentWait.until(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return driver.findElement(By.cssSelector(cssLocator)).getText().equals(textExxpected);
+            }
+        });
+    }
+
 
     @Test
     public void TC_03_Upload() {
@@ -100,7 +137,6 @@ public class Topic_26_Wait_PV_Explicit_Excercise {
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(@class,'item_open') and text()='" + moonFileName + "']")));
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(@class,'item_open') and text()='" + tigerFileName + "']")));
     }
-
 
     @AfterClass
     public void afterClass() {

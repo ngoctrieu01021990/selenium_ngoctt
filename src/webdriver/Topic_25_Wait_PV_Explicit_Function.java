@@ -42,9 +42,9 @@ public class Topic_25_Wait_PV_Explicit_Function {
 
         //truyền nhiều element khác nhau
         explicitWait.until(ExpectedConditions.visibilityOfAllElements(
-                (WebElement)driver.findElements(By.cssSelector("input#email")),
-                (WebElement)driver.findElements(By.cssSelector("input#name")),
-                (WebElement)driver.findElements(By.cssSelector("input#password"))));
+                driver.findElement(By.cssSelector("input#email")),
+                driver.findElement(By.cssSelector("input#name")),
+                driver.findElement(By.cssSelector("input#password"))));
 
         //truyền nhiều element giống nhau
         explicitWait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.cssSelector("input[type='text']"))));
