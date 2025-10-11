@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI automation testing web" verbose="1" parallel="tests" thread-count="2">
+
+    <parameter name="environmentName" value="Prod"></parameter>
+    <parameter name="platformName" value="Windows"></parameter>
+
+    <test name="Run on FIREFOX">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="testNG.basic.Topic_11_Invocation"/>
+        </classes>
+    </test>
+
+    <test name="Run on CHROME">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="testNG.basic.Topic_11_Invocation"/>
+        </classes>
+    </test>
+
+    <!--<test name="Run on EDGE">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="testNG.basic.Topic_10_MultipleEnvironment_Platform"/>
+        </classes>
+    </test>-->
+
+
+</suite>
