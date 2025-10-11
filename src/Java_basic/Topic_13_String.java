@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Topic_13_String {
     public static void main(String[] args) {
-        TC_04();
+        TC_05();
     }
 
     public static void kieudlString() {
@@ -122,6 +122,51 @@ public class Topic_13_String {
         } else {
             System.out.println("Số điện thoại không hợp lệ.");
         }
+    }
+
+    public static void TC_05() {
+        String text = "Convert RGBA color value";
+        // so sánh chuỗi tuyệt đối
+        System.out.println(text.equals("Convert RGBA color value"));
+        System.out.println(text.equals("Convert RGBA color value."));
+
+        // so sánh chuỗi tuyệt đối k phân biệt hoa thường
+        System.out.println(text.equalsIgnoreCase("convert rgba color value."));
+
+        // so sánh tương đối
+        System.out.println(text.contains("Convert RGBA"));
+        System.out.println(text.contains("RGBA"));
+        System.out.println(text.contains("color value."));
+
+        System.out.println(text.startsWith("Convert"));
+        System.out.println(text.endsWith("value."));
+
+        // tách chuỗi
+        String[] textArray = text.split("RGBA");
+        for (String temp : textArray) {
+            System.out.println(temp);
+        }
+
+        //nối chuỗi.
+        System.out.println(text.concat("fomat with alpha channel support"));
+
+        System.out.println(text.toLowerCase());
+        System.out.println(text.toUpperCase());
+
+        System.out.println(text.charAt(0));
+        System.out.println(text.charAt(3));
+        System.out.println(text.charAt(text.length() - 1));
+
+        System.out.println(text.compareTo("fomat with alpha channel support"));
+        System.out.println(text.indexOf("R"));
+
+        System.out.println(text.isBlank());
+        System.out.println(text.isEmpty());
+        System.out.println(text.replace("RGBA","Hexa"));
+
+        text="  \nConvert RGBA color value.\n   ";
+        System.out.println(text.trim());
+
     }
 
 }

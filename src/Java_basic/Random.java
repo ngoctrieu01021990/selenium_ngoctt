@@ -8,4 +8,8 @@ public class Random {
         System.out.println("peter" + new java.util.Random().nextInt(999)+"@hotmail.com");
         System.out.println("peter" + new java.util.Random().nextInt(999)+"@hotmail.com");
     }
+
+    public String nextInt(int i) {
+        return null;
+    }
 }

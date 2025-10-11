@@ -38,7 +38,6 @@ public class Topic_11_Button {
         //verify button enable
         Assert.assertTrue(driver.findElement(loginButton).isEnabled());
         Assert.assertEquals(Color.fromString(driver.findElement(loginButton).getCssValue("background-color")).asHex().toUpperCase(),"#C92127");
-
     }
 
     @AfterClass

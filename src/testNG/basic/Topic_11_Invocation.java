@@ -53,7 +53,7 @@ public class Topic_11_Invocation {
         outputStrem = new FileOutputStream(path);
     }
 
-    @Test(invocationCount = 2, timeOut = 100000)
+    @Test(invocationCount = 2)
     public void TC_01_Register() throws InterruptedException, IOException {
         driver.get("http://live.techpanda.org/index.php/");
 
