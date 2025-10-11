@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" verbose="1">
+    <test name="Run on FIREFOX">
+     <groups>
+         <run>
+             <include name="platformMobile"/>
+         </run>
+     </groups>
+
+        <packages>
+            <package name="platformMobile"/>
+            <package name="platformWeb"/>
+        </packages>
+
+        <classes>
+            <class name="testNG.platformMobile.Mobile_01_User"/>
+            <class name="testNG.platformMobile.Mobile_02_Payment"/>
+        </classes>
+    </test>
+
+    <!--<test name="Run on FireFox">
+        <classes>
+            <class name="testNG.basic.Topic_01_Annotations">
+                <methods>
+                    <include name="TC_01"/>
+                    <include name="TC_02"/>
+                    <include name="TC_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+</suite>
