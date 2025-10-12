@@ -7,10 +7,10 @@
          </run>
      </groups>
 
-        <packages>
-            <package name="platformMobile"/>
-            <package name="platformWeb"/>
-        </packages>
+      <!--  <packages>
+            <package name="testNG.platformMobile"/>
+            <package name="testNG.platformWeb"/>
+        </packages>-->
 
         <classes>
             <class name="testNG.platformMobile.Mobile_01_User"/>
